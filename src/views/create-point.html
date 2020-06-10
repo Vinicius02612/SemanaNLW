@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ponto de Coleta</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu:wght@300;700&display=swap" rel="stylesheet">
+    <!--  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet"-->
+    <link rel="stylesheet" href="./estilos/main.css">
+    <link rel="stylesheet" href="./estilos/create-point.css">
+    <link rel="stylesheet" href="./estilos/responsive.css">
+
+</head>
+
+<body>
+
+    <div id="page-create-point">
+
+
+        {% include "partes/page-header.html" %}
+        <main>
+
+        </main>
+        <form action="/savepoint" method ="POST" >
+            <h1>Cadastro do Ponto de Coleta </h1>
+            <!--Agrupando elementos usando Fildset-->
+            <fieldset>
+                <legend>
+                    <h2>Dados do entidade</h2>
+                </legend>
+                <div class="field">
+                    <label for="">Nome da entidade</label>
+                    <input type="text" name="name" placeholder="Nome da entidade">
+                </div>
+                <div class="field-grup">
+                    <div class="field">
+                        <label for="addres">Endereço</label>
+                        <input type="text" name="addres" placeholder="Endereço">
+                    </div>
+                    <div class="field">
+                        <label for="number">Numero</label>
+                        <input type="number" name="number" placeholder="Numero">
+                    </div>
+                </div>
+                <!--Parte de Seleconar estaods-->
+                <div class="field-grup">
+                    <div class="field">
+                        <label for="state">Estado</label>
+
+                        <select  name="uf">
+                            <option value="">Estado</option>
+                                             
+                        </select>
+                        <input type="hidden" name="state">
+                    </div>
+
+                <!--Parte de Seleconar Cidade-->
+                    <div class="field">
+                        <label for="city">Cidade</label>
+
+                        <select  name="city"> 
+                            <option value="">Selecione a Cidade </option>
+                        </select>                      
+                    </div>
+                </div>
+            </fieldset>
+
+
+            <fieldset>
+                <legend>
+                    <h2>Itens de coleta</h2>
+                    <span id="sp">Selecione um ou mais itens a baxio</span>
+                </legend>
+                <!--Lampadas-->
+                <div class="item-grid">
+                    <li data-id=" Lampadas" class="select" >
+                        <img src="./assets/lampadas.svg" alt="Lampadas">
+                        <span>Lampadas</span>
+
+                    </li>
+                    <li data-id="Pilhas e Baterias" >
+                        <img src="./assets/baterias.svg" alt="Pilhas e Baterias">
+                        <span>Pilhas e Baterias</span>
+
+                    </li>
+                    <li data-id="Papeis e Papelão" >
+                        <img src="./assets/papeis-papelao.svg" alt="Papeis e Papelão">
+                        <span>Papeis e Papelão</span>
+
+                    </li>
+
+                    <li data-id="Eletronicos">
+                        <img src="./assets/eletronicos.svg" alt="Eletronicos">
+                        <span>Eletronicos</span>
+
+                    </li>
+                    <li data-id="Organicos">
+                        <img src="./assets/organicos.svg" alt="Organicos">
+                        <span>Organicos</span>
+
+                    </li>
+
+                    <li data-id="Oleo de Cozinha">
+                        <img src="./assets/oleo.svg" alt="Oleo de Cozinha">
+                        <span>Oleo de Cozinha</span>
+
+                    </li>
+                    <input type="hidden" name="items" value="">
+                </div>
+            </fieldset>
+
+            <button type="submit">Cadastrar ponto de Coleta</button>
+        </form>
+
+
+
+        <script src="/srcipts/create-point.js"></script>
+
+    </div>
+
+
+</body>
+
+</html>

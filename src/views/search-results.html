@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ponto de Coleta</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu:wght@300;700&display=swap" rel="stylesheet">
+    <!--  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet"-->
+    <link rel="stylesheet" href="./estilos/main.css">
+    <link rel="stylesheet" href="./estilos/search-results.css">
+    <link rel="stylesheet" href="./estilos/create-point.css">
+    <link rel="stylesheet" href="./estilos/responsive.css">
+
+</head>
+
+<body>
+
+    <div id="page-search-results">
+
+
+        {% include "partes/page-header.html"%}
+        <main>
+
+        {% if total > 0%}
+           <h4>
+                <strong>{total} pontos </strong> encontrados
+            </h4>
+
+            <div class="cards">
+
+            <!--Pegando os Aquivos do servidor-->
+           {% for place in places%}
+                  <div class="card">
+                    <img src="{{place.imagem}}" alt="{{place.nome}}">
+                    <h1>{{place.nome}}</h1>
+                    <h3>{{place.itens}}<br></h3>
+                    <p>
+                        {{place.cidade}}, {{place.estado}}
+                        <br>
+                        {{place.endereco}},
+                        <br>
+                        {{place.endereco2}}
+                    </p>
+                </div>
+
+           {%endfor%}}
+
+         {%else%}}
+         <h4><strong>Nunhum </strong> local encontrado</h4>  
+
+        {% endif %}
+           
+
+            
+
+            </div>
+
+        </main>
+
+
+
+</body>
+
+</html>

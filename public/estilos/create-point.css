@@ -1,0 +1,155 @@
+            body {
+                background-color: rgb(190, 190, 190);
+            }
+            
+            #page-create-point {
+                width: 90%;
+                max-width: 1100px;
+                margin: 0 auto;
+            }
+            
+            #page-create-point header {
+                margin-top: 48px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            
+            #page-create-point header a {
+                color: var(--title-color);
+                font-weight: bold;
+                display: flex;
+                align-items: center;
+            }
+            
+            #page-create-point header a span {
+                margin-right: 16px;
+                background-image: url('../assets/arrow-left.svg');
+                display: flex;
+                width: 20px;
+                height: 20px;
+            }
+            
+            form {
+                background-color: rgb(255, 255, 255);
+                margin: 90px auto;
+                padding: 30px;
+                border-radius: 8px;
+                box-shadow: 10px 10px 20px rgb(78, 78, 78);
+                max-width: 800px;
+            }
+            
+            form h1 {
+                font-size: 36px;
+            }
+            
+            form fieldset {
+                margin-top: 64px;
+                border: 0;
+            }
+            
+            form legend {
+                margin-bottom: 40px;
+            }
+            
+            form legend h2 {
+                font-size: 32px;
+            }
+            
+            form legend #sp {
+                color: var(--title-color);
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            
+            form .field {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 24px;
+            }
+            
+            form .field-grup {
+                display: flex;
+            }
+            
+            form input,
+            select {
+                background-color: #e0e0e0;
+                border: 0;
+                padding: 16px 24px;
+                font-size: 16px;
+                border-radius: 8px;
+            }
+            
+            form select {
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+            }
+            
+            form labe {
+                font-size: 14px;
+                margin-bottom: 8px;
+            }
+            
+            form .field-grup .field+.field {
+                margin-left: 24px;
+            }
+            
+            form button {
+                width: 260px;
+                height: 56px;
+                background-color: var(--prime-color);
+                color: white;
+                border-radius: 8px;
+                font-weight: bold;
+                font-size: 16px;
+                border: 0px;
+                margin-top: 40px;
+                transition: background-color 400ms;
+            }
+            
+            form button:hover {
+                background-color: #2fb86e;
+            }
+            
+            .item-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 16px
+            }
+            
+            .item-grid li {
+                background-color: #dfdfdf;
+                list-style: none;
+                padding: 10px;
+                border: 2px solid #c5c5c5;
+                border-radius: 8px;
+                height: 180px;
+                padding: 32px 24px 16px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+                text-align: center;
+                cursor: pointer;
+            }
+            
+            .item-grid li span {
+                margin-top: 12px;
+                flex: 1;
+                display: flex;
+                align-items: center;
+            }
+            
+            .item-grid li.selected {
+                background: #e1faec;
+                border: 2px solid #34cb79;
+            }
+            
+            .item-grid li img,
+            .item-grid li span {
+                pointer-events: none;
+            }
